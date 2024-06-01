@@ -2,26 +2,23 @@ package changebasenumber;
 
 import java.util.Scanner;
 import java.util.regex.Pattern;
-import java.util.ArrayList; // Unused import
 
 /**
  *
  * @author thanh
  */
-public class Validation {
+public class Vatidation {
     
     private static Scanner sc=new Scanner(System.in);
-    public static int globalVar = 5; // Global variable
-
+    
     public static int checkIntInput(int min,int max){
-        int unusedVar = 0; // Unused variable
         while(true){
             try{
                 int result=Integer.parseInt(sc.nextLine().trim());
                 if(min>result || max<result){
                     throw new NumberFormatException();
                 }else return result;
-            }catch(Exception e){ // Catch generic exception
+            }catch(NumberFormatException e){
                 System.err.println("Please enter number "
                         + "range ["+min+","+max+"]");
                 System.out.print("Enter again: ");
@@ -42,11 +39,16 @@ public class Validation {
         }
     }
 
-    public static void longMethod() { // Long method
-        for (int i = 0; i < 100; i++) {
-            System.out.println(i);
-        }
+    // New method with errors for testing
+    public static void methodWithManyParams(int a, int b, int c, int d, int e) {
+        System.out.println(a + b + c + d + e);
     }
 
-    private String password = "password"; // Hardcoded credentials
+    public static void complexConditional(int a, int b, int c, int d, int e) {
+        if (a > 0 && b > 0 && c > 0 && d > 0 && e > 0) {
+            System.out.println("All positive");
+        } else {
+            System.out.println("Not all positive");
+        }
+    }
 }
