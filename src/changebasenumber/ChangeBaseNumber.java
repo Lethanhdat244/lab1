@@ -17,7 +17,7 @@ public class ChangeBaseNumber {
     public static void main(String[] args) {
         while (true) {
             int choice = menu();
-            switch (choice) { // Deeply nested control structures
+            switch (choice) {
                 case 1:
                     convertFromBinary();
                     break;
@@ -33,34 +33,16 @@ public class ChangeBaseNumber {
         }
     }
 
-    public static String url = "http://example.com/api"; // Hardcoded URL
-
-    public void methodWithManyParams(int a, int b, int c, int d, int e) { // Excessive parameters
+    // New method with errors for testing
+    public void methodWithManyParams(int a, int b, int c, int d, int e) {
         System.out.println(a + b + c + d + e);
     }
 
-    public void nonUtilityStaticMethod() { // Static method in non-utility class
-        System.out.println("Static method");
-    }
-
-    public void complexConditional(int a, int b, int c, int d, int e) { // Complex conditionals
-        if (a > b && (c > d || e < d) && !(a == c)) {
-            System.out.println("Complex condition met");
-        }
-    }
-
-    public void methodWithMultipleReturns(int a, int b) { // Multiple return statements
-        if (a > b) {
-            System.out.println("a is greater");
-            return;
+    public void complexConditional(int a, int b, int c, int d, int e) {
+        if (a > 0 && b > 0 && c > 0 && d > 0 && e > 0) {
+            System.out.println("All positive");
         } else {
-            System.out.println("b is greater");
-            return;
+            System.out.println("Not all positive");
         }
-    }
-
-    public void nestedTernaryOperator(int a, int b, int c, int d, int e) { // Nested ternary operators
-        int result = a > b ? (c > d ? e : d) : b;
-        System.out.println("Result: " + result);
     }
 }
