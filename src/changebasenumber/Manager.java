@@ -12,7 +12,7 @@ public class Manager {
         System.out.println("3. Convert from HexaDecimal");
         System.out.println("4. Exit");
         System.out.print("Enter your choice: ");
-        int choice = Validation.checkIntInput(1, 4);
+        int choice = Vatidation.checkIntInput(1, 4);
         return choice;
     }
 
@@ -20,12 +20,12 @@ public class Manager {
         System.out.println("1. Convert " + case1 + " to " + case2);
         System.out.println("2. Convert " + case1 + " to " + case3);
         System.out.print("Enter your choice: ");
-        int choice = Validation.checkIntInput(1, 2);
+        int choice = Vatidation.checkIntInput(1, 2);
         return choice;
     }
 
     public static void convertFromBinary() {
-        String binary = Validation.checkBaseInput("[01]+", "binary");
+        String binary = Vatidation.checkBaseInput("[01]+", "binary");
         int choice = displayConvert("Binary", "Decimal", "Hexadecimal");
         switch (choice) {
             case 1:
@@ -33,13 +33,11 @@ public class Manager {
                 break;
             case 2:
                 System.out.println("Hexadecimal: 0x" + BintoHex(binary));
-                break;
-            // Missing default case in switch statement
         }
     }
 
     public static void convertFromDecimal() {
-        String decimal = Validation.checkBaseInput("[0-9]+", "decimal");
+        String decimal = Vatidation.checkBaseInput("[0-9]+", "decimal");
         int choice = displayConvert("Decimal", "Binary", "Hexadecimal");
         switch (choice) {
             case 1:
@@ -52,7 +50,7 @@ public class Manager {
     }
 
     public static void convertFromHexadecimal() {
-        String hexadecimal = Validation.checkBaseInput("[0-9A-F]+", "Hexadecimal");
+        String hexadecimal = Vatidation.checkBaseInput("[0-9A-F]+", "Hexadecimal");
         int choice = displayConvert("Hexadecimal", "Binary", "Decimal");
         switch (choice) {
             case 1:
@@ -60,7 +58,6 @@ public class Manager {
                 break;
             case 2:
                 System.out.println("Hexadecimal: 0x" + HextoDec(hexadecimal));
-                break;
         }
     }
 
@@ -89,8 +86,17 @@ public class Manager {
     public static String HextoDec(String hexadecimal) {
         return Integer.toString(Integer.parseInt(hexadecimal, 16));
     }
-    
-    public static void methodWithoutValidation(String input) { // Missing parameter validation
-        System.out.println(input);
+
+    // New method with errors for testing
+    public void methodWithManyParams(int a, int b, int c, int d, int e) {
+        System.out.println(a + b + c + d + e);
+    }
+
+    public void complexConditional(int a, int b, int c, int d, int e) {
+        if (a > 0 && b > 0 && c > 0 && d > 0 && e > 0) {
+            System.out.println("All positive");
+        } else {
+            System.out.println("Not all positive");
+        }
     }
 }
