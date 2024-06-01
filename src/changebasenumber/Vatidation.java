@@ -2,23 +2,26 @@ package changebasenumber;
 
 import java.util.Scanner;
 import java.util.regex.Pattern;
+import java.util.ArrayList; // Unused import
 
 /**
  *
  * @author thanh
  */
-public class Vatidation {
+public class Validation {
     
     private static Scanner sc=new Scanner(System.in);
-    
+    public static int globalVar = 5; // Global variable
+
     public static int checkIntInput(int min,int max){
+        int unusedVar = 0; // Unused variable
         while(true){
             try{
                 int result=Integer.parseInt(sc.nextLine().trim());
                 if(min>result || max<result){
                     throw new NumberFormatException();
                 }else return result;
-            }catch(NumberFormatException e){
+            }catch(Exception e){ // Catch generic exception
                 System.err.println("Please enter number "
                         + "range ["+min+","+max+"]");
                 System.out.print("Enter again: ");
@@ -38,4 +41,12 @@ public class Vatidation {
             System.out.print("Enter again: ");
         }
     }
+
+    public static void longMethod() { // Long method
+        for (int i = 0; i < 100; i++) {
+            System.out.println(i);
+        }
+    }
+
+    private String password = "password"; // Hardcoded credentials
 }
